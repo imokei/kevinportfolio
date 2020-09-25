@@ -1,32 +1,424 @@
 <!DOCTYPE html>
-<header>
-    <title>Kevin Nguyen's Portfolio</title>
-    <link rel="stylesheet" href="index.css">
 
-</header>
+<head>
+    <title>Kevin Nguyen's Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="https://kit.fontawesome.com/e9009b2295.js" crossorigin="anonymous"></script>
+</head>
+<script>
+    function showProject(projName) {
+        var div = document.getElementsByClassName(projName);
+        var nailDiv = document.getElementsByClassName('nailInfo');
+        var animeDiv = document.getElementsByClassName('animeInfo');
+        var dexDiv = document.getElementsByClassName('dexInfo');
+        var studentDiv = document.getElementsByClassName('studentInfo');
+        var defaultDiv = document.getElementsByClassName('defaultInfo');
+
+        defaultDiv[0].style.display = "none";
+        nailDiv[0].style.display = "none";
+        animeDiv[0].style.display = "none";
+        dexDiv[0].style.display = "none";
+        studentDiv[0].style.display = "none";
+        div[0].style.display = "block";
+    }
+
+    function navigateTo(destination) {
+        var targetLocation = document.location.toString().split('#')[0];
+        document.location = targetLocation + '#' + destination;
+        return false;
+    }
+
+    function goToURL(url) {
+        window.open(url);
+    }
+
+    var animeD = document.getElementsByClassName('studentInfo');
+    var defaultDiv = document.getElementsByClassName('defaultInfo');
+
+    var btn = document.getElementByClassName("learnButton");
+    btn.onclick = function () {
+        animeD[0].style.display = "none";
+    }  
+
+    var modal = document.getElementById('nailInfo');
+    window.onclick = function(e){
+        if(e.target == modal){
+            modal.style.display = "none";
+        }
+    }
+
+
+</script>
 
 <body>
-    <div class="wrapper">
-        <section class="Intro">
-            <h1>Hey this is my portfolio</h1>
 
-        </section>
-        <section class="Projects">
-            <h1>Here are my projects</h1>
-            <p>Mom nails mobile app, anime2manga website, any vr games i decide to make, dexproejct</p>
-        </section>
-        <section>
-            <h1></h1>
-        </section>
-        <section class="AboutMe">
-            <!-- Picture of me,  -->
-            <h1>Heres some stuff about me</h1>
-            <p>My name is Kevin Nguyen. I'm a software engineer who graduated from California State University San Marcos in 2019. My hobbies include Virtual Reality, Gaming, Anime and cooking. </p>
+    <!-- <div class="lights"></div> -->
 
-        </section>
-        <section class="ContactMe">
-            <h1>Contact me through email/linkedin</h1>
-        </section>
-    </div>
 
+    <!-- NAVBAR AND HEADER -->
+    <!-- <section class="header">
+        <a href="#homePage"></a>
+        <div class="logo">
+            <img src="kevin.jpg" alt="">
+        </div>
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <nav class="nav">
+            <ul class=" navList">
+                <li class="navItem"><a href="#" class="navLink">HOME</a></li>
+                <li class="navItem"><a href="#" class="navLink">PROJECTS</a></li>
+                <li class="navItem"><a href="#" class="navLink">SKILLS</a></li>
+                <li class="navItem"><a href="#" class="navLink">CONTACT ME</a></li>
+            </ul>
+        </nav>
+
+    </section>  -->
+
+
+    <!-- INTRODUCTION -->
+    <section class="intro" id="home">
+        <h1 class="introTitle">Hi I'm Kevin Nguyen</h1>
+        <p class="introSubtitle">Im a Software Engineer</p>
+        <div class="introPic"> <img src="kevin.jpg" alt="kev">
+        </div>
+        <button class="introButton" onclick="navigateTo('skills')"> GO TO
+        </button>
+
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skillsPage">
+        <a href="#skills" id="skills"></a>
+
+        <div class="skillsTitle">
+            <h1>SKILLS & TECHNOLOGIES</h1>
+
+        </div>
+        <div class="front-end">
+            <h1>Front End Technologies</h1>
+            <ul>
+                <li>HTML5</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>ReactJS</li>
+                <li>JQuery</li>
+                <li>BootStrap</li>
+
+                <li>Android Studio ( Java ) </li>
+                <li>React Native ( JavaScript ) </li>
+            </ul>
+
+        </div>
+        <div class="back-end">
+            <h1>Back End Technologies</h1>
+            <ul>
+                <li>Java</li>
+                <li>Spring</li>
+                <li>JavaScript</li>
+                <li>NodeJS</li>
+                <li>ExpressJS</li>
+                <li>MySQL</li>
+                <li>NoSQL</li>
+                <li>MongoDB</li>
+                <li>C#</li>
+                <li>ASP.NET</li>
+            </ul>
+        </div>
+        <div class="otherTechnicalSkills">
+            <h1>Other Technical Skills</h1>
+            <ul>
+                <li>Java</li>
+                <li>JavaScript</li>
+                <li>C++</li>
+                <li>AWS</li>
+                <li>Microsoft Azure</li>
+                <li>Agile</li>
+                <li>Scrum</li>
+                <li>Git</li>
+                <li>Unit Testing</li>
+                <li>JUnit</li>
+                <li>Debugging</li>
+                <li>Code Reviews</li>
+            </ul>
+
+
+        </div>
+        <!-- <div class="softSkills">
+            <h1>Soft Skills</h1>
+            <ul>
+                <li>Communication</li>
+                <li>Collaboration</li>
+                <li>Team Work</li>
+                <li>Result-Focused</li>
+                <li>Problem Solving</li>
+            </ul>
+        </div> -->
+        <button class="skillsButton" onclick="navigateTo('projects')"> GO TO
+        </button>
+    </section>
+
+    <section class="projectsPage">
+        <a href="#projects" id="projects"></a>
+
+        <div class="projectWrapper">
+            <div class="projectTitle">
+                <h1>PROJECTS</h1>
+            </div>
+            <div class="projectCards">
+                
+                <button onclick="showProject('nailInfo')" id=" biggest">
+                    <img src="./img1.jpg" alt="kev_img" />
+                </button>
+                <button onclick="showProject('animeInfo')">
+                    <img src="./img1.jpg" alt="kev_img" />
+                </button>
+                <button onclick="showProject('dexInfo')">
+                    <img src="./img1.jpg" alt="kev_img" />
+                </button>
+                <button onclick="showProject('studentInfo')">
+                    <img src="./img1.jpg" alt="kev_img" />
+                </button>
+            </div>
+
+            <div class="projectContent">
+                <div id=" defaultInfo" class="defaultInfo">
+                    <h1>HEY THIS IS DEFAULT INFO</h1>
+                </div>
+
+
+                <div id="nailInfo" class="nailInfo">
+                    <div class="modal-content">
+                        <div class="projectHeader">
+                            <h1>BEBE'S NAILS</h1>
+                            <hr>
+                        </div>
+                        <button class="liveDemoButton" onclick="goToURL('https://github.com/imokei')">LIVE DEMO</button>
+                        <button class="codeButton" onclick="goToURL('https://github.com/imokei')">SOURCE CODE</button>
+                        <button class="learnButton">CLOSE</button>
+
+                        <div class="galleryWrapper">
+                            <div class="projectGallery">
+                                <p class="projectDescription"> During the coronavirus pandemic, my Mom's income was
+                                    negatively
+                                    impacted.
+                                    I designed and created a mobile application for my mom's nail salon to help her keep
+                                    in contact with her clients. It showcases her work and
+                                    provide an easy way for customers to contact her which allowed
+                                    her to earn some extra money.
+                                </p>
+                                <div class="gallery js-flickity"
+                                    data-flickity-options='{ "cellAlign": "left", "contain": true }'>
+
+                                    <div class="gallery-cell"><img src="./img1.jpg" alt="kev_img" /> </div>
+                                    <div class="gallery-cell"><img src="./img2.jpg" alt="kev_img" /> </div>
+                                    <div class="gallery-cell"><img src="./img3.jpg" alt="kev_img" /> </div>
+                                    <div class="gallery-cell"><img src="./img1.jpg" alt="kev_img" /> </div>
+                                    <div class="gallery-cell"><img src="./img2.jpg" alt="kev_img" /> </div>
+                                    <div class="gallery-cell"><img src="./img3.jpg" alt="kev_img" /> </div>
+                                    <div class="gallery-cell"><img src="./img1.jpg" alt="kev_img" /> </div>
+                                    <div class="gallery-cell"><img src="./img2.jpg" alt="kev_img" /> </div>
+                                    <div class="gallery-cell"><img src="./img3.jpg" alt="kev_img" /> </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="animeInfo" class="animeInfo">
+                    <div class="modal-content">
+                        <div class="projectHeader">
+                            <h1>WWW.ANIME2MANGA.XYZ</h1>
+                            <hr>
+                        </div>
+                        <button class="liveDemoButton" onclick="goToURL('www.anime2manga.xyz')">LIVE DEMO</button>
+                        <button class="codeButton" onclick="goToURL('https://github.com/imokei')">SOURCE CODE</button>
+                        <button class="learnButton">CLOSE</button>
+
+                        <div class="galleryWrapper">
+                            <div class="projectGallery">
+                                <p class="projectDescription"> Anime fans often finish a season of their favorite show
+                                    and
+                                    want more.
+                                    Luckily for them most animes are adapted from their source manga. However, theres
+                                    no easy way to find where to continue. I solved this issue by providing
+                                    a way for fans to easily look up their favorite animes and find out which chapter to
+                                    continue
+                                    on.
+                                </p>
+                                <div class="gallery js-flickity"
+                                    data-flickity-options='{ "cellAlign": "left", "contain": true }'>
+
+                                    <div class="gallery-cell"><img src="./img1.jpg" alt="kev_img" /> </div>
+                                    <div class="gallery-cell"><img src="./img2.jpg" alt="kev_img" /> </div>
+                                    <div class="gallery-cell"><img src="./img3.jpg" alt="kev_img" /> </div>
+                                    <div class="gallery-cell"><img src="./img1.jpg" alt="kev_img" /> </div>
+                                    <div class="gallery-cell"><img src="./img2.jpg" alt="kev_img" /> </div>
+                                    <div class="gallery-cell"><img src="./img3.jpg" alt="kev_img" /> </div>
+                                    <div class="gallery-cell"><img src="./img1.jpg" alt="kev_img" /> </div>
+                                    <div class="gallery-cell"><img src="./img2.jpg" alt="kev_img" /> </div>
+                                    <div class="gallery-cell"><img src="./img3.jpg" alt="kev_img" /> </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div id="dexInfo" class="dexInfo">
+                    <div class="modal-content">
+                        <div class="projectHeader">
+                            <h1>THE DEX PROJECT</h1>
+                            <hr>
+                        </div>
+                        <button class="liveDemoButton" onclick="goToURL('https://github.com/imokei')">LIVE DEMO</button>
+                        <button class="codeButton" onclick="goToURL('https://github.com/imokei')">SOURCE CODE</button>
+                        <button class="learnButton">CLOSE</button>
+
+                        <div class="galleryWrapper">
+                            <div class="projectGallery">
+                                <p class="projectDescription"> I often wonder what something is and want to learn more
+                                    about
+                                    it.
+                                    I usually google
+                                    things
+                                    that I
+                                    know the name of but the problem
+                                    occurs when I don't know what something is AND I don't know what it is called. So I
+                                    created
+                                    a
+                                    cross-platform mobile app that allows
+                                    me to take a picture of it and then "google" search it.
+                                </p>
+                                <div class="gallery js-flickity"
+                                    data-flickity-options='{ "cellAlign": "left", "contain": true }'>
+
+                                    <div class="gallery-cell"><img src="./img1.jpg" alt="kev_img" /> </div>
+                                    <div class="gallery-cell"><img src="./img2.jpg" alt="kev_img" /> </div>
+                                    <div class="gallery-cell"><img src="./img3.jpg" alt="kev_img" /> </div>
+                                    <div class="gallery-cell"><img src="./img1.jpg" alt="kev_img" /> </div>
+                                    <div class="gallery-cell"><img src="./img2.jpg" alt="kev_img" /> </div>
+                                    <div class="gallery-cell"><img src="./img3.jpg" alt="kev_img" /> </div>
+                                    <div class="gallery-cell"><img src="./img1.jpg" alt="kev_img" /> </div>
+                                    <div class="gallery-cell"><img src="./img2.jpg" alt="kev_img" /> </div>
+                                    <div class="gallery-cell"><img src="./img3.jpg" alt="kev_img" /> </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="studentInfo" class="studentInfo">
+                    <div class="modal-content">
+                        <div class="projectHeader">
+                            <h1>THE STUDENT EXCHANGE</h1>
+                            <hr>
+                        </div>
+                        <button class="liveDemoButton" onclick="goToURL('https://github.com/imokei')">LIVE DEMO</button>
+                        <button class="codeButton" onclick="goToURL('https://github.com/imokei')">SOURCE CODE</button>
+                        <button class="learnButton">CLOSE</button>
+
+
+                        <div class="projectGallery">
+                            <p class="projectDescription"> While in University, I worked on a project called the Student
+                                Exchange. My team and
+                                I
+                                wanted
+                                to
+                                make
+                                an easy way
+                                for students to buy and sell their used textbooks and unneeded supplies. So to solve
+                                this
+                                problem we
+                                created an
+                                online marketplace similar to Amazon but for students in our smaller community.
+                            </p>
+                            <div class="galleryWrapper">
+                                <div class="gallery js-flickity"
+                                    data-flickity-options='{ "cellAlign": "left", "contain": true }'>
+
+                                    <div class="gallery-cell"><img src="./img1.jpg" alt="kev_img" /> </div>
+                                    <div class="gallery-cell"><img src="./img2.jpg" alt="kev_img" /> </div>
+                                    <div class="gallery-cell"><img src="./img3.jpg" alt="kev_img" /> </div>
+                                    <div class="gallery-cell"><img src="./img1.jpg" alt="kev_img" /> </div>
+                                    <div class="gallery-cell"><img src="./img2.jpg" alt="kev_img" /> </div>
+                                    <div class="gallery-cell"><img src="./img3.jpg" alt="kev_img" /> </div>
+                                    <div class="gallery-cell"><img src="./img1.jpg" alt="kev_img" /> </div>
+                                    <div class="gallery-cell"><img src="./img2.jpg" alt="kev_img" /> </div>
+                                    <div class="gallery-cell"><img src="./img3.jpg" alt="kev_img" /> </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <button class="projectButton" onclick="navigateTo('footer')"> GO TO
+            </button>
+        </div>
+    </section>
+
+    <footer>
+        <a href="#footer" id="footer"></a>
+        <div class="footerWrapper">
+            <div class="socies">
+                <h1>CONNECT WITH ME</h1>
+                <ul class=" social-List">
+                    <li class="social-Item">
+                        <a href="#" class="social-Link"><i class="fab fa-github fa-lg"></i>
+                        </a>
+                    </li>
+                    <li class="social-Item">
+                        <a href="#" class="social-Link"> <i class="fab fa-facebook fa-lg"></i>
+                        </a>
+                    </li>
+                    <li class="social-Item">
+                        <a href="#" class="social-Link fa-lg">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </li>
+                    <li class="social-Item">
+                        <a href="#" class="social-Link">
+                            <i class="fab fa-android fa-lg"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="quickLinks">
+                <h1>QUICK LINKS</h1>
+                <ul class="linkList">
+                    <li>
+                        <button class="skillsButton" onclick="navigateTo('skills')"> GO TO SKILLS
+                        </button>
+                    </li>
+                    <li>
+                        <button class="skillsButton" onclick="navigateTo('projects')"> GO TO PROJ
+                        </button>
+                    </li>
+                    <li>
+                        <button class="skillsButton" onclick="navigateTo('home')"> GO TO HOME
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="contact">
+                <h1>CONTACT ME</h1>
+                <p>Please contact me through E-mail! (Found on Resume) </p>
+            </div>
+            <div class="copycrea">
+                <h1>CREATED 2020</h1>
+            </div>
+
+        </div>
+
+    </footer>
 </body>

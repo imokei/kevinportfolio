@@ -1,42 +1,544 @@
-body{
-    background-color: lightyellow;
+html {
+    height: 100%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 16px;
+    /* overflow: hidden; */
 }
-.wrapper{
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    /* color: #116466; */
+    /* background-color: #2C3531; */
+    color: #D1E8E2;
+    /* background-image: url("bg.jpeg"); */
+    background-size: auto inherit;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #222629;
+}
+
+button {
+    background-color: transparent;
+    color: blanchedalmond;
+    border: none;
+    outline: none;
+    float: left;
+    overflow: hidden;
+}
+
+/* color: #116466; */
+
+/* background-color: #2C3531; */
+
+/* background-color: #222629; */
+
+/* color: #D1E8E2; */
+
+/* 61892F */
+
+/* 86C232 */
+
+/* 222629 */
+
+/* 474B4F */
+
+/* 6B6E70 */
+
+/* INTRO CSS */
+
+.intro {
     display: grid;
-    margin-left: 10%;
-    margin-right: 10%; 
-    text-align: center;
-    grid-template-columns: 26% 26% 26% 22% ; 
-    grid-gap:10px;
-    grid-auto-rows: minmax(100px,auto);
-    grid-auto-columns: minmax(100px,auto);
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    grid-auto-columns: minmax(100px, auto);
+    background-color: #61892F;
 }
 
-.Intro{
-    box-shadow: 0px 0px 5px 0px;
-    grid-row: 1;
-    grid-column: 1/5;
-    
-
+.intro img {
+    max-height: 50vh;
+    max-width: 100%;
+    border-radius: 25%;
 }
-.Projects{
-    box-shadow: 0px 0px 5px 0px;
 
-    grid-row: 2;
-    grid-column: 1/5;
-
-}
-.AboutMe{
-    box-shadow: 0px 0px 5px 0px;
-
+.introButton {
+    background-color: #222629;
     grid-row: 3;
     grid-column: 1/5;
-
-
+    height: 20vh;
 }
-.ContactMe{
-    box-shadow: 0px 0px 5px 0px;
 
-    grid-row: 4;
-    grid-column: 1/5;
+.introPic {
+    margin: 10vh 10vh;
+    height: 50vh;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.introTitle {
+    grid-column: 1/3;
+    grid-row: 1/3;
+    background-color: whitesmoke;
+    color: #61892F;
+    border-radius: 25px;
+    text-align: right;
+}
+
+.introSubtitle {
+    grid-column: 3/5;
+    grid-row: 1/3;
+    background-color: #222629;
+    color: #61892F;
+    border-radius: 25px;
+    text-align: center;
+}
+
+/* SKILLS CSS */
+
+.skillsPage {
+    background-color: #222629;
+    color: white;
+    display: grid;
+    grid-template-columns: 33% 33% 34%;
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    grid-auto-columns: minmax(100px, auto);
+}
+
+.skillsPage h1 {
+    background-color: #61892F;
+    padding: 10px 10px;
+    border-radius: 25px;
+    text-align: center;
+    width: 50vh;
+}
+
+.skillsTitle {
+    text-align: center;
+    grid-column: 2;
+    grid-row: 1;
+    color: black;
+    height: 15vh;
+}
+
+.front-end {
+    height: 70vh;
+    grid-column: 1;
+    grid-row: 2/3;
+}
+
+.back-end {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.otherTechnicalSkills {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.skillsButton {
+    grid-area: bottom;
+    grid-column: 1/4;
+    grid-row: 3;
+    background-color: #61892F;
+    color: whitesmoke;
+    height: 15vh;
+}
+
+/* PROJECTS */
+
+@keyframes pulsating {
+    from {
+        box-shadow: 0 0 8px white;
+    }
+    to {
+        box-shadow: 0 0 8px white, 0 0 25px white
+    }
+}
+
+@keyframes floatup {
+    from {
+        bottom: 0%;
+    }
+    to {
+        bottom: 105%;
+    }
+}
+
+.lights {
+    left: 25%;
+    width: 1px;
+    height: 2px;
+    position: absolute;
+    border: 10px solid transparent;
+    border-radius: 25px;
+    box-shadow: 0 0 80px red, 0 0 80px white, 0 0 80px white;
+    animation: pulsating infinite alternate 1s, floatup infinite 40s;
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+}
+
+.projectWrapper {
+    background-color: #61892F;
+    color: whitesmoke;
+    display: grid;
+    grid-template-columns: 33% 33% 34%;
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    grid-auto-columns: minmax(100px, auto);
+}
+
+.projectTitle {
+    background-color: #222629;
+    color: #61892F;
+    text-align: center;
+    padding: 1px 1px;
+    margin: 2px 1px;
+    height: 10vh;
+    border-radius: 25px;
+    text-align: center;
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.projectCards {
+    background-color: #222629;
+    padding: 2vh 2vh;
+    color: #222629;
+    height: 85%;
+    grid-row: 2;
+    grid-column: 1/4;
+}
+
+.projectContent {
+    background-color: transparent;
+    color: #61892F;
+    height: 75vh;
+    grid-row: 2;
+    grid-column: 1/4;
+}
+
+.projectHeader {
+    color: #61892F;
+    text-align: center;
+}
+
+.projectGallery {
+    max-height: 50vh;
+    padding-bottom: 10vh;
+}
+
+.projectDescription {
+    background-color: #222629;
+    color: #61892F;
+    border: solid 1px whitesmoke;
+    padding: 2vh 5vh;
+    border-radius: 25px;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.liveDemoButton {
+    background-color: red;
+    color: white;
+    border: 1px solid white;
+    border-radius: 25px;
+    padding: 5px 5px;
+    margin: 5px 5px;
+}
+
+.codeButton {
+    background-color: #61892F;
+    color: white;
+    border: 1px solid white;
+    border-radius: 25px;
+    padding: 5px 5px;
+    margin: 5px 5px;
+}
+
+.learnButton {
+    background-color: cadetblue;
+    color: white;
+    border: 1px solid white;
+    border-radius: 25px;
+    padding: 5px 5px;
+    margin: 5px 5px;
+}
+
+.projectButton {
+    grid-row: 3;
+    grid-column: 1/4;
+    background-color: #61892F;
+    color: whitesmoke;
+    height: 10vh;
+}
+
+.projectCards button {
+    width: 24%;
+    height: 80%;
+    margin: 1px 3px;
+}
+
+.projectCards button img {
+    height: 100%;
+    width: 100%;
+    /* transition: 750ms cubic-bezier(.5,0,.5,1),
+    opacity 250ms linear; */
+}
+
+.cardContainer {
+    position: relative;
+}
+
+.cardOverlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #61892F;
+}
+
+.cardContainer:hover .cardOverlay {
+    opacity: 1;
+}
+
+.cardText {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.projectCards button:hover {
+    transform: scale(1.1);
+    opacity: 1;
+    box-shadow: 0 0 80px grey, 0 0 80px white, 0 0 80px white;
+}
+
+.defaultInfo {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+.nailInfo {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+.animeInfo {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+.dexInfo {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+.studentInfo {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+}
+
+.galleryWrapper {
+    margin-left: 5vh;
+    margin-right: 5vh;
+}
+
+.gallery-cell {
+    margin-left: 2vh;
+    margin-right: 2vh;
+    width: 50vh;
+    height: 30vh;
+}
+
+.gallery-cell img {
+    width: 100%;
+    height: 100%;
+}
+
+/* FOOTER CSS */
+
+footer {
+    background-color: #61892F;
+    color: black;
+    text-align: center;
+    padding: 2.6em 0;
+    height: 50vh;
+}
+
+.footer a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footerLink:hover, .socialLink:hover {
+    opacity: 0.7;
+}
+
+.footerLink {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.footerLink:hover {
+    text-decoration: underline;
+}
+
+.social-List {
+    list-style-type: none;
+}
+
+.social-Item {
+    padding: 5vh 5vh;
+    display: block;
+    float: left;
+    text-decoration: none;
+}
+
+.footerWrapper {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+
+.socies {
+    grid-row: 1/2;
+    grid-column: 1;
+}
+
+.quickLinks {
+    grid-row: 1/2;
+    grid-column: 2;
+}
+
+.linkList {
+    list-style-type: none;
+}
+
+.linkList li {
+    display: block;
+    float: left;
+    text-decoration: none;
+    margin: 1vh 1vh;
+}
+
+.contact {
+    grid-row: 1/2;
+    grid-column: 3;
+}
+
+.copycrea {
+    grid-row: 3;
+    grid-column: 1/4;
+}
+
+.copycrea h1 {
+    bottom: 0;
 }
