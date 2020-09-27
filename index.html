@@ -38,45 +38,52 @@
     var animeD = document.getElementsByClassName('studentInfo');
     var defaultDiv = document.getElementsByClassName('defaultInfo');
 
-    var btn = document.getElementByClassName("learnButton");
-    btn.onclick = function () {
-        animeD[0].style.display = "none";
-    }  
+    function closeModal(target) {
+        console.log("the target to close: ", target);
+        var modal = document.getElementById(target);
+        modal.style.display = "none";
+    }
 
-    var modal = document.getElementById('nailInfo');
-    window.onclick = function(e){
-        if(e.target == modal){
-            modal.style.display = "none";
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+        var head = document.getElementsByClassName('header');
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            head[0].style.fontSize = "2.25vh";
+        } else {
+            head[0].style.fontSize = "4.5vh";
         }
     }
 
-
 </script>
 
-<body>
+<body onscroll="scrollFunction()">
+    <a href="#homePage"></a>
 
     <!-- <div class="lights"></div> -->
 
 
     <!-- NAVBAR AND HEADER -->
-    <!-- <section class="header">
-        <a href="#homePage"></a>
-        <div class="logo">
-            <img src="kevin.jpg" alt="">
+    <section id="header">
+        <div class="header">
+            <div class="logo">
+                <button class="logoBtn" onclick="navigateTo('')">KEVIN NGUYEN</button>
+            </div>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class=" navList">
+                    <li class="navItem"><a href="#footer" class="navLink">CONTACT</a></li>
+                    <li class="navItem"><a href="#projects" class="navLink">PROJECTS</a></li>
+                    <li class="navItem"><a href="#skills" class="navLink">SKILLS</a></li>
+                    <li class="navItem"><a href="#" class="navLink">HOME</a></li>
+                </ul>
+            </nav>
         </div>
-        <button class="nav-toggle" aria-label="toggle navigation">
-            <span class="hamburger"></span>
-        </button>
-        <nav class="nav">
-            <ul class=" navList">
-                <li class="navItem"><a href="#" class="navLink">HOME</a></li>
-                <li class="navItem"><a href="#" class="navLink">PROJECTS</a></li>
-                <li class="navItem"><a href="#" class="navLink">SKILLS</a></li>
-                <li class="navItem"><a href="#" class="navLink">CONTACT ME</a></li>
-            </ul>
-        </nav>
 
-    </section>  -->
+
+    </section>
 
 
     <!-- INTRODUCTION -->
@@ -85,14 +92,14 @@
         <p class="introSubtitle">Im a Software Engineer</p>
         <div class="introPic"> <img src="kevin.jpg" alt="kev">
         </div>
-        <button class="introButton" onclick="navigateTo('skills')"> GO TO
+        <button class="introButton" onclick="navigateTo('skills')"> <i class="fas fa-angle-double-down"></i>
         </button>
 
     </section>
 
     <!-- SKILLS -->
+    <a href="#skills" id="skills"></a>
     <section class="skillsPage">
-        <a href="#skills" id="skills"></a>
 
         <div class="skillsTitle">
             <h1>SKILLS & TECHNOLOGIES</h1>
@@ -157,7 +164,9 @@
                 <li>Problem Solving</li>
             </ul>
         </div> -->
-        <button class="skillsButton" onclick="navigateTo('projects')"> GO TO
+        <button class="skillsButton" onclick="navigateTo('projects')"> <i class="fas fa-angle-double-down"></i>
+
+
         </button>
     </section>
 
@@ -169,8 +178,8 @@
                 <h1>PROJECTS</h1>
             </div>
             <div class="projectCards">
-                
-                <button onclick="showProject('nailInfo')" id=" biggest">
+
+                <button onclick="showProject('nailInfo')">
                     <img src="./img1.jpg" alt="kev_img" />
                 </button>
                 <button onclick="showProject('animeInfo')">
@@ -198,7 +207,9 @@
                         </div>
                         <button class="liveDemoButton" onclick="goToURL('https://github.com/imokei')">LIVE DEMO</button>
                         <button class="codeButton" onclick="goToURL('https://github.com/imokei')">SOURCE CODE</button>
-                        <button class="learnButton">CLOSE</button>
+                        <button class="learnButton" onclick="closeModal('nailInfo')"><i class="fas fa-times"></i>
+
+                        </button>
 
                         <div class="galleryWrapper">
                             <div class="projectGallery">
@@ -236,7 +247,9 @@
                         </div>
                         <button class="liveDemoButton" onclick="goToURL('www.anime2manga.xyz')">LIVE DEMO</button>
                         <button class="codeButton" onclick="goToURL('https://github.com/imokei')">SOURCE CODE</button>
-                        <button class="learnButton">CLOSE</button>
+                        <button class="learnButton" onclick="closeModal('animeInfo')"><i class="fas fa-times"></i>
+
+                        </button>
 
                         <div class="galleryWrapper">
                             <div class="projectGallery">
@@ -278,7 +291,9 @@
                         </div>
                         <button class="liveDemoButton" onclick="goToURL('https://github.com/imokei')">LIVE DEMO</button>
                         <button class="codeButton" onclick="goToURL('https://github.com/imokei')">SOURCE CODE</button>
-                        <button class="learnButton">CLOSE</button>
+                        <button class="learnButton" onclick="closeModal('dexInfo')"><i class="fas fa-times"></i>
+
+                        </button>
 
                         <div class="galleryWrapper">
                             <div class="projectGallery">
@@ -321,7 +336,9 @@
                         </div>
                         <button class="liveDemoButton" onclick="goToURL('https://github.com/imokei')">LIVE DEMO</button>
                         <button class="codeButton" onclick="goToURL('https://github.com/imokei')">SOURCE CODE</button>
-                        <button class="learnButton">CLOSE</button>
+                        <button class="learnButton" onclick="closeModal('studentInfo')"><i class="fas fa-times"></i>
+
+                        </button>
 
 
                         <div class="projectGallery">
@@ -362,36 +379,37 @@
 
 
             </div>
-            <button class="projectButton" onclick="navigateTo('footer')"> GO TO
+            <button class="projectButton" onclick="navigateTo('footer')"> <i class="fas fa-angle-double-down"></i>
+
+
             </button>
         </div>
     </section>
+    <a href="#footer" id="footer"></a>
 
-    <footer>
-        <a href="#footer" id="footer"></a>
-        <div class="footerWrapper">
+    <section class="contact" id="contact">
+        <div class="contactWrapper">
             <div class="socies">
                 <h1>CONNECT WITH ME</h1>
-                <ul class=" social-List">
-                    <li class="social-Item">
-                        <a href="#" class="social-Link"><i class="fab fa-github fa-lg"></i>
-                        </a>
-                    </li>
-                    <li class="social-Item">
-                        <a href="#" class="social-Link"> <i class="fab fa-facebook fa-lg"></i>
-                        </a>
-                    </li>
-                    <li class="social-Item">
-                        <a href="#" class="social-Link fa-lg">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                    </li>
-                    <li class="social-Item">
-                        <a href="#" class="social-Link">
-                            <i class="fab fa-android fa-lg"></i>
-                        </a>
-                    </li>
-                </ul>
+                <div class="our-team">
+                    <div class="picture">
+                        <img class="contactPic" src="kevin.jpg">
+                    </div>
+                    <div class="team-content">
+                        <h3 class="name">Kevin Nguyen</h3>
+                        <h4 class="title">Software Engineer</h4>
+                    </div>
+                    <ul class="social">
+                        <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-facebook"
+                                aria-hidden="true"></a></li>
+                        <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-twitter"
+                                aria-hidden="true"></a></li>
+                        <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-google-plus"
+                                aria-hidden="true"></a></li>
+                        <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-linkedin"
+                                aria-hidden="true"></a></li>
+                    </ul>
+                </div>
             </div>
             <div class="quickLinks">
                 <h1>QUICK LINKS</h1>
@@ -410,15 +428,15 @@
                     </li>
                 </ul>
             </div>
-            <div class="contact">
+            <div class="contactMe">
                 <h1>CONTACT ME</h1>
                 <p>Please contact me through E-mail! (Found on Resume) </p>
             </div>
-            <div class="copycrea">
-                <h1>CREATED 2020</h1>
-            </div>
 
         </div>
-
+    </section>
+    <footer>
+        <h1>CREATED 2020</h1>
     </footer>
+
 </body>
